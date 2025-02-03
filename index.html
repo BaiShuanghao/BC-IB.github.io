@@ -43,6 +43,10 @@
   <script src="static/js/bulma-carousel.min.js"></script>
   <script src="static/js/bulma-slider.min.js"></script>
   <script src="static/js/index.js"></script>
+
+  <!-- my -->
+  <script type="text/javascript" async src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script type="text/javascript" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
 
@@ -52,21 +56,27 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">Academic Project Page</h1>
+            <h1 class="title is-1 publication-title" style="font-size: 38px;">Rethinking Latent Representations in Behavior Cloning: <br> An Information Bottleneck Approach for <br> Robot Manipulation</h1>
             <div class="is-size-5 publication-authors">
               <!-- Paper authors -->
               <span class="author-block">
-                <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">First Author</a><sup>*</sup>,</span>
+                <a href="https://baishuanghao.github.io/" target="_blank">Shuanghao Bai</a><sup>1</sup>,</span>
                 <span class="author-block">
-                  <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Second Author</a><sup>*</sup>,</span>
+                  <a href="https://ellezwq.github.io/" target="_blank">Wanqi Zhou</a><sup>1</sup>,</span>
                   <span class="author-block">
-                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Third Author</a>
+                    <a href="https://dingpx.github.io/" target="_blank">Pengxiang Ding</a><sup>2</sup>,</span>
+                    <span class="author-block">
+                      <a href="" target="_blank">Wei Zhao</a><sup>2</sup>,</span>
+                      <span class="author-block">
+                        <a href="https://milab.westlake.edu.cn/" target="_blank">Donglin Wang</a><sup>2</sup>,</span>
+                    <span class="author-block">
+                      <a href="https://gr.xjtu.edu.cn/web/chenbd/home" target="_blank">Badong Chen</a><sup>1</sup>
                   </span>
                   </div>
 
                   <div class="is-size-5 publication-authors">
-                    <span class="author-block">Institution Name<br>Conferance name and year</span>
-                    <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
+                    <span class="author-block"><sup>1</sup>Xi'an Jiaotong University  <sup>2</sup>Westlake University</span>   <!-- <br>Conferance name and year -->
+                    <!-- <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span> -->
                   </div>
 
                   <div class="column has-text-centered">
@@ -95,7 +105,7 @@
 
                   <!-- Github link -->
                   <span class="link-block">
-                    <a href="https://github.com/YOUR REPO HERE" target="_blank"
+                    <a href="https://github.com/BaiShuanghao/BC-IB" target="_blank"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fab fa-github"></i>
@@ -124,12 +134,12 @@
 
 
 <!-- Teaser video-->
-<section class="hero teaser">
+<!-- <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <video poster="" id="tree" autoplay controls muted loop height="100%">
+      <video poster="" id="tree" autoplay controls muted loop height="100%"> -->
         <!-- Your video here -->
-        <source src="static/videos/banner_video.mp4"
+        <!-- <source src="static/videos/banner_video.mp4"
         type="video/mp4">
       </video>
       <h2 class="subtitle has-text-centered">
@@ -137,7 +147,7 @@
       </h2>
     </div>
   </div>
-</section>
+</section> -->
 <!-- End teaser video -->
 
 <!-- Paper abstract -->
@@ -148,7 +158,13 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper tellus sed ante aliquam tempus. Etiam porttitor urna feugiat nibh elementum, et tempor dolor mattis. Donec accumsan enim augue, a vulputate nisi sodales sit amet. Proin bibendum ex eget mauris cursus euismod nec et nibh. Maecenas ac gravida ante, nec cursus dui. Vivamus purus nibh, placerat ac purus eget, sagittis vestibulum metus. Sed vestibulum bibendum lectus gravida commodo. Pellentesque auctor leo vitae sagittis suscipit.
+            Behavior Cloning (BC) is a widely adopted visual imitation learning method in robot manipulation.
+            Current BC approaches often enhance generalization by leveraging large datasets and incorporating additional visual and textual modalities to capture more diverse information.
+            However, these methods overlook whether the learned representations contain redundant information and lack a solid theoretical foundation to guide the learning process.
+            To address these limitations, we adopt an information-theoretic perspective and introduce mutual information to quantify and mitigate redundancy in latent representations.
+            Building on this, we incorporate the Information Bottleneck (IB) principle into BC, which extends the idea of reducing redundancy by providing a structured framework for compressing irrelevant information while preserving task-relevant features.
+            This work presents the first comprehensive study on redundancy in latent representations across various methods, backbones, and experimental settings, while extending the generalizability of the IB to BC.
+            Extensive experiments and analyses on the CortexBench and LIBERO benchmarks demonstrate significant performance improvements with IB, underscoring the importance of reducing input data redundancy and highlighting its practical value for more practical applications.
           </p>
         </div>
       </div>
@@ -158,35 +174,139 @@
 <!-- End paper abstract -->
 
 
+<!-- Paper intro & method -->
+<section class="section hero is-small">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Introduction</h2>
+        <div class="content has-text-justified">
+          <p>
+            <ul>
+              <li>We extend the Information Bottleneck (IB) principle to Behavior Cloning (BC) and provide a comprehensive study on the impact of latent representation redundancy in Behavior Cloning for robot manipulation.</li>
+              <li>We empirically demonstrate that minimizing redundancy in latent representations helps existing BC algorithms significantly improve generalization performance on the Cortexbench and LIBERO benchmarks across various settings, indirectly highlighting the considerable redundancy present in current robot trajectory datasets.</li>
+              <li>We provide a detailed theoretical analysis explaining why Information Bottleneck principle enhances the transferability of Behavior Cloning methods.</li>
+            </ul>
+          </p>
+        </div>
+
+        <div style="text-align: center;">
+          <img src="static/images/intro.png" alt="Description of the image" style="width: 70%; height: auto;">
+        </div>
+        
+        <br>
+
+        <div style="text-align: left;">
+        <p>Vanilla Behavior Cloning Loss:</p>
+        </div>
+        <div style="text-align: center;">
+        \[
+        \mathcal{L}_{\mathrm{BC}}=\mathbb{E}_{\left(x_t, a_t\right) \sim \mathcal{D}_e}\left[\left\|\pi\left(x_t\right)-a_t\right\|^2\right].
+        \]
+        </div>
+        <div style="text-align: left;">
+        <p>Behavior Cloning with Information Bottleneck (BC-IB):</p>
+        </div>
+        <div style="text-align: center;">
+        \[
+        \mathcal{L}_{\mathrm{BC-IB}}=\mathbb{E}_{(x_t, a_t) \sim \mathcal{D}_e}\left[\beta I(x_t, z_t) + \|\pi(x_t)-a_t\|^2\right].
+        \]
+        </div>
+
+        <div style="text-align: left;">
+        We apply these two optimization objectives to the commonly used BC algorithms. We categorize existing BC algorithms based on the fusion method into two types: spatial fusion and temporal fusion.
+        </div>
+        <div style="text-align: center;">
+          <img src="static/images/model.png" alt="Description of the image" style="width: 100%; height: auto;">
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper intro & method -->
+
+
+
+<!-- Paper experiment -->
+<section class="section hero is-small">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Simulation Experiments</h2>
+        <div class="content has-text-justified">
+          We first evaluate baselines and basleines with IB on CortexBench.
+        </div>
+
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+              <div class="content has-text-justified">
+                  <h2 class="title is-4">Seen Objects, Unseen Combinations</h2>
+              </div>
+              <div style="display: flex; justify-content: center; gap: 20px; margin-top: 40px; margin-bottom: 20px;">
+                  <!-- Left GIF with label -->
+                  <div style="text-align: center;">
+                      <b>Knock mustard down</b>
+                      <img src="static/videos/real_videos/knocking_seen_mustard_scratch_fail.gif" alt="Scratch" style="width: 65%; height: auto;">
+                      <br><b>Scratch</b>
+                      <br><span style="font-size: 24px;">❌</span>
+                  </div>
+                  <!-- Right GIF with label -->
+                  <div style="text-align: center;">
+                      <b>Knock mustard down</b>
+                      <img src="static/videos/real_videos/knocking_seen_mustard_openvla_fail.gif" alt="OpenVLA" style="width: 65%; height: auto;">
+                      <br><b>OpenVLA</b>
+                      <br><span style="font-size: 24px;">❌</span>
+                  </div>
+                  <div style="text-align: center;">
+                      <b>Knock mustard down</b>
+                      <img src="static/videos/real_videos/knocking_seen_mustard_lapa_success.gif" alt="LAPA" style="width: 65%; height: auto;">
+                      <br><b>LAPA</b>
+                      <br><span style="font-size: 24px;">✅</span>
+                  </div>
+              </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper experiments -->
+
+
+
 <!-- Image carousel -->
-<section class="hero is-small">
+<!-- <section class="hero is-small">
   <div class="hero-body">
     <div class="container">
       <div id="results-carousel" class="carousel results-carousel">
-       <div class="item">
+       <div class="item"> -->
         <!-- Your image here -->
-        <img src="static/images/carousel1.jpg" alt="MY ALT TEXT"/>
+        <!-- <img src="static/images/carousel1.jpg" alt="MY ALT TEXT"/>
         <h2 class="subtitle has-text-centered">
           First image description.
         </h2>
       </div>
-      <div class="item">
+      <div class="item"> -->
         <!-- Your image here -->
-        <img src="static/images/carousel2.jpg" alt="MY ALT TEXT"/>
+        <!-- <img src="static/images/carousel2.jpg" alt="MY ALT TEXT"/>
         <h2 class="subtitle has-text-centered">
           Second image description.
         </h2>
       </div>
-      <div class="item">
+      <div class="item"> -->
         <!-- Your image here -->
-        <img src="static/images/carousel3.jpg" alt="MY ALT TEXT"/>
+        <!-- <img src="static/images/carousel3.jpg" alt="MY ALT TEXT"/>
         <h2 class="subtitle has-text-centered">
          Third image description.
        </h2>
      </div>
-     <div class="item">
+     <div class="item"> -->
       <!-- Your image here -->
-      <img src="static/images/carousel4.jpg" alt="MY ALT TEXT"/>
+      <!-- <img src="static/images/carousel4.jpg" alt="MY ALT TEXT"/>
       <h2 class="subtitle has-text-centered">
         Fourth image description.
       </h2>
@@ -194,64 +314,64 @@
   </div>
 </div>
 </div>
-</section>
+</section> -->
 <!-- End image carousel -->
 
 
 
-
 <!-- Youtube video -->
-<section class="hero is-small is-light">
+<!-- <section class="hero is-small is-light">
   <div class="hero-body">
-    <div class="container">
+    <div class="container"> -->
       <!-- Paper video. -->
-      <h2 class="title is-3">Video Presentation</h2>
+      <!-- <h2 class="title is-3">Video Presentation</h2>
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
           
-          <div class="publication-video">
+          <div class="publication-video"> -->
             <!-- Youtube embed code here -->
-            <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            <!-- <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
           </div>
         </div>
       </div>
     </div>
   </div>
-</section>
+</section> -->
 <!-- End youtube video -->
 
 
+
 <!-- Video carousel -->
-<section class="hero is-small">
+<!-- <section class="hero is-small">
   <div class="hero-body">
     <div class="container">
       <h2 class="title is-3">Another Carousel</h2>
       <div id="results-carousel" class="carousel results-carousel">
         <div class="item item-video1">
-          <video poster="" id="video1" autoplay controls muted loop height="100%">
+          <video poster="" id="video1" autoplay controls muted loop height="100%"> -->
             <!-- Your video file here -->
-            <source src="static/videos/carousel1.mp4"
+            <!-- <source src="static/videos/carousel1.mp4"
             type="video/mp4">
           </video>
         </div>
         <div class="item item-video2">
-          <video poster="" id="video2" autoplay controls muted loop height="100%">
+          <video poster="" id="video2" autoplay controls muted loop height="100%"> -->
             <!-- Your video file here -->
-            <source src="static/videos/carousel2.mp4"
+            <!-- <source src="static/videos/carousel2.mp4"
             type="video/mp4">
           </video>
         </div>
         <div class="item item-video3">
-          <video poster="" id="video3" autoplay controls muted loop height="100%">\
+          <video poster="" id="video3" autoplay controls muted loop height="100%">\ -->
             <!-- Your video file here -->
-            <source src="static/videos/carousel3.mp4"
+            <!-- <source src="static/videos/carousel3.mp4"
             type="video/mp4">
           </video>
         </div>
       </div>
     </div>
   </div>
-</section>
+</section> -->
 <!-- End video carousel -->
 
 
@@ -260,7 +380,7 @@
 
 
 <!-- Paper poster -->
-<section class="hero is-small is-light">
+<!-- <section class="hero is-small is-light">
   <div class="hero-body">
     <div class="container">
       <h2 class="title">Poster</h2>
@@ -270,7 +390,7 @@
         
       </div>
     </div>
-  </section>
+  </section> -->
 <!--End paper poster -->
 
 
@@ -284,7 +404,7 @@
 <!--End BibTex citation -->
 
 
-  <footer class="footer">
+<footer class="footer">
   <div class="container">
     <div class="columns is-centered">
       <div class="column is-8">
