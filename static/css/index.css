@@ -208,3 +208,91 @@ body {
 }
 
 
+
+
+/* GIF 滚动容器 */
+.gif-row-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.gif-suite {
+  width: 48%;
+  text-align: center;
+}
+
+.gif-scroll-container {
+  width: 90%;
+  max-width: 800px;
+  margin: auto;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  overflow-x: auto; /* 启用水平滚动 */
+  overflow-y: hidden;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+}
+
+/* GIF 容器 */
+.gif-wrapper {
+  display: flex;
+  gap: 10px;
+  scroll-behavior: smooth; /* 让滚动更平滑 */
+}
+
+/* GIF 样式 */
+.gif-item {
+  flex: 0 0 auto;
+  position: relative;
+  cursor: pointer;
+}
+
+/* 让 GIF 具有固定大小 */
+.gif-item img {
+  width: 150px;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* 悬停时显示 Task 名称 */
+.gif-item::after {
+  content: attr(data-task); /* 读取 HTML 中的 data-task 内容 */
+  position: absolute;
+  bottom: -10px; /* 让文本显示在 GIF 下方 */
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.85); /* 让背景更深，不影响可读性 */
+  color: white;
+  padding: 8px 12px;
+  border-radius: 5px;
+  font-size: 14px;
+  white-space: normal; /* 允许换行 */
+  max-width: 100%; /* 让文本自动适应 GIF 宽度 */
+  width: 150px; /* 确保与 GIF 宽度一致 */
+  text-align: center;
+  word-wrap: break-word; /* 确保长单词换行 */
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  z-index: 100; /* 确保文本浮动在最上方 */
+}
+
+/* 鼠标悬停时显示任务名称 */
+.gif-item:hover::after {
+  opacity: 1;
+}
+
+/* LIBERO-Goal 标题样式 */
+.gif-title {
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+  margin-top: 15px; /* 增加间距，让标题不贴近 GIF */
+  margin-bottom: 15px; /* 增加间距，让标题不贴近 GIF */
+}
+
