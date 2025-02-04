@@ -48,15 +48,17 @@
   <script type="text/javascript" async src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script type="text/javascript" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
-<body>
 
+
+<body>
 
   <section class="hero">
     <div class="hero-body">
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title" style="font-size: 38px;">Rethinking Latent Representations in Behavior Cloning: <br> An Information Bottleneck Approach for <br> Robot Manipulation</h1>
+            <h1 class="title is-1 publication-title" style="font-size: 44px;">Rethinking Latent Representations in <br> Behavior Cloning:</h1>
+            <h1 class="title is-1 publication-title" style="font-size: 30px;">An Information Bottleneck Approach for Robot Manipulation</h1>
             <div class="is-size-5 publication-authors">
               <!-- Paper authors -->
               <span class="author-block">
@@ -81,47 +83,51 @@
 
                   <div class="column has-text-centered">
                     <div class="publication-links">
-                         <!-- Arxiv PDF link -->
-                      <span class="link-block">
-                        <a href="https://arxiv.org/pdf/<ARXIV PAPER ID>.pdf" target="_blank"
-                        class="external-link button is-normal is-rounded is-dark">
-                        <span class="icon">
-                          <i class="fas fa-file-pdf"></i>
-                        </span>
-                        <span>Paper</span>
-                      </a>
-                    </span>
 
-                    <!-- Supplementary PDF link -->
+                    <!-- Arxiv PDF link -->
                     <span class="link-block">
-                      <a href="static/pdfs/supplementary_material.pdf" target="_blank"
+                      <a href="https://arxiv.org/pdf/<ARXIV PAPER ID>.pdf" target="_blank"
                       class="external-link button is-normal is-rounded is-dark">
                       <span class="icon">
                         <i class="fas fa-file-pdf"></i>
                       </span>
-                      <span>Supplementary</span>
-                    </a>
-                  </span>
-
-                  <!-- Github link -->
-                  <span class="link-block">
-                    <a href="https://github.com/BaiShuanghao/BC-IB" target="_blank"
-                    class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="fab fa-github"></i>
+                      <span>Paper</span>
+                      </a>
                     </span>
-                    <span>Code</span>
-                  </a>
-                </span>
 
-                <!-- ArXiv abstract Link -->
-                <span class="link-block">
-                  <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
-                  class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                    <i class="ai ai-arxiv"></i>
-                  </span>
-                  <span>arXiv</span>
+                    <!-- Supplementary PDF link -->
+                      <!-- <span class="link-block">
+                          <a href="static/pdfs/supplementary_material.pdf" target="_blank"
+                          class="external-link button is-normal is-rounded is-dark">
+                          <span class="icon">
+                            <i class="fas fa-file-pdf"></i>
+                          </span>
+                          <span>Supplementary</span>
+                        </a>
+                      </span> -->
+
+                    <!-- ArXiv abstract Link -->
+                    <span class="link-block">
+                      <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
+                      class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="ai ai-arxiv"></i>
+                      </span>
+                      <span>arXiv</span>                  
+                      </a>
+                    </span>
+
+                    <!-- Github link -->
+                    <span class="link-block">
+                      <a href="https://github.com/BaiShuanghao/BC-IB" target="_blank"
+                      class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="fab fa-github"></i>
+                      </span>
+                      <span>Code</span>
+                      </a>
+                    </span>
+                    
                 </a>
               </span>
             </div>
@@ -192,6 +198,7 @@
 
         <div style="text-align: center;">
           <img src="static/images/intro.png" alt="Description of the image" style="width: 70%; height: auto;">
+          <figcaption>Policy architecture of BC and BC+IB.</figcaption>
         </div>
         
         <br>
@@ -218,6 +225,7 @@
         </div>
         <div style="text-align: center;">
           <img src="static/images/model.png" alt="Description of the image" style="width: 100%; height: auto;">
+          <figcaption>Model architecture classified by the fusion method.</figcaption>
         </div>
 
 
@@ -235,24 +243,99 @@
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Simulation Experiments</h2>
-        <div class="content has-text-justified">
-          We first evaluate baselines and basleines with IB on CortexBench.
+
+        <div class="content has-text-justified" style="text-align: center;">
+          We first evaluate baselines and basleines with IB on CortexBench. 
+          We selected four imitation learning-related simulators, encompassing a total of 14 tasks.
         </div>
 
-        <div class="columns is-centered has-text-centered">
+        <div class="gif-container">
+          <div class="gif-items">
+              <div class="gif-item" data-task="Assembly Task">
+                  <img src="static/videos/cortexbench/mw_assembly.gif" alt="Assembly Task">
+              </div>
+              <div class="gif-item" data-task="Bin-picking Task">
+                  <img src="static/videos/cortexbench/mw_bin-picking.gif" alt="Bin-picking Task">
+              </div>
+              <div class="gif-item" data-task="Button-press-topdown Task">
+                  <img src="static/videos/cortexbench/mw_button-press-topdown.gif" alt="Button-press-topdown Task">
+              </div>
+              <div class="gif-item" data-task="Drawer-open Task">
+                  <img src="static/videos/cortexbench/mw_drawer-open.gif" alt="Drawer-open Task">
+              </div>
+              <div class="gif-item" data-task="Hammer Task">
+                  <img src="static/videos/cortexbench/mw_hammer.gif" alt="Hammer Task">
+              </div>
+            </div>
+            <div class="category-title">MetaWorld</div>
+        </div>
+        
+        <div class="content has-text-justified" style="text-align: center;">
+          Although only MetaWorld is strictly a robot manipulation benchmark, yet we include all tasks to comprehensively demonstrate the effectiveness of IB.
+        </div>
+
+
+        <div class="gif-container">
+          <div class="gif-items">
+              <div class="gif-item" data-task="Cheetah Run Task">
+                  <img src="static/videos/cortexbench/dmc_cheetah_run.gif" alt="Cheetah Run Task">
+              </div>
+              <div class="gif-item" data-task="Finger Spin Task">
+                  <img src="static/videos/cortexbench/dmc_finger_spin.gif" alt="Finger Spin Task">
+              </div>
+              <div class="gif-item" data-task="Reacher Easy Task">
+                  <img src="static/videos/cortexbench/dmc_reacher_easy.gif" alt="Reacher Easy Task">
+              </div>
+              <div class="gif-item" data-task="Walker Stand Task">
+                  <img src="static/videos/cortexbench/dmc_walker_stand.gif" alt="Walker Stand Task">
+              </div>
+              <div class="gif-item" data-task="Walker Walk Task">
+                  <img src="static/videos/cortexbench/dmc_walker_walk.gif" alt="Walker Walk Task">
+              </div>
+            </div>
+            <div class="category-title">DMControl</div>
+        </div>
+
+        <div class="gif-container">
+          <div class="gif-items">
+              <div class="gif-item" data-task="Reorient Pen Task">
+                  <img src="static/videos/cortexbench/ad_pen.gif" alt="Reorient Pen Task">
+              </div>
+              <div class="gif-item" data-task="Relocate Task">
+                  <img src="static/videos/cortexbench/ad_relocate.gif" alt="Relocate Task">
+              </div>
+              <div class="gif-item" data-task="Move Cube Task">
+                  <img src="static/videos/cortexbench/tf_move.gif" alt="Move Cube Task">
+              </div>
+              <div class="gif-item" data-task="Reach Cube Task">
+                  <img src="static/videos/cortexbench/tf_reach.gif" alt="Reach Cube Task">
+              </div>
+          </div>
+          <div class="category-title">Adroit & Trifinger</div>
+        </div>
+      
+        <div style="text-align: left;">
+          We
+        </div>
+        <div style="text-align: center;">
+          <img src="static/images/cortexbench_results.png" alt="Description of the image" style="width: 100%; height: auto;">
+          <figcaption>Model architecture classified by the fusion method.</figcaption>
+        </div>
+
+
+
+        <!-- <div class="columns is-centered has-text-centered">
           <div class="column is-four-fifths">
               <div class="content has-text-justified">
                   <h2 class="title is-4">Seen Objects, Unseen Combinations</h2>
               </div>
               <div style="display: flex; justify-content: center; gap: 20px; margin-top: 40px; margin-bottom: 20px;">
-                  <!-- Left GIF with label -->
                   <div style="text-align: center;">
                       <b>Knock mustard down</b>
                       <img src="static/videos/real_videos/knocking_seen_mustard_scratch_fail.gif" alt="Scratch" style="width: 65%; height: auto;">
                       <br><b>Scratch</b>
                       <br><span style="font-size: 24px;">❌</span>
                   </div>
-                  <!-- Right GIF with label -->
                   <div style="text-align: center;">
                       <b>Knock mustard down</b>
                       <img src="static/videos/real_videos/knocking_seen_mustard_openvla_fail.gif" alt="OpenVLA" style="width: 65%; height: auto;">
@@ -267,7 +350,7 @@
                   </div>
               </div>
           </div>
-        </div>
+        </div> -->
 
 
       </div>
