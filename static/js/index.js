@@ -21,3 +21,24 @@ $(document).ready(function() {
 })
 
 
+
+document.querySelectorAll(".video-player").forEach(video => {
+    const progressBar = video.nextElementSibling;
+
+    video.addEventListener("loadedmetadata", () => {
+        progressBar.max = video.duration; // 确保进度条最大值等于视频时长
+    });
+
+    video.addEventListener("timeupdate", () => {
+        if (!isNaN(video.duration)) {
+            progressBar.value = (video.currentTime / video.duration) * 100;
+        }
+    });
+
+    progressBar.addEventListener("input", () => {
+        video.currentTime = (progressBar.value / 100) * video.duration;
+    });
+
+    video.play().catch(error => console.log("Autoplay blocked:", error));
+});
+

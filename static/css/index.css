@@ -302,14 +302,15 @@ body {
 .video-row {
   display: flex;
   justify-content: center;
-  flex-wrap: wrap; /* 如果屏幕太小，允许换行 */
+  flex-wrap: wrap;
   gap: 20px;
   margin-top: 20px;
 }
 
 .video-container {
-  width: 23%; /* 每个视频占四分之一宽度 */
+  width: 23%;
   text-align: center;
+  position: relative;
 }
 
 video {
@@ -323,3 +324,9 @@ video {
   margin-top: 10px;
 }
 
+/* 进度条样式 */
+.progress-bar {
+  width: 100%;
+  margin-top: 5px;
+  cursor: pointer;
+}
