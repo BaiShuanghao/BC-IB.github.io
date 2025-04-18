@@ -529,80 +529,169 @@
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Real-world Experiments</h2>
-
+        
+        <div style="text-align: left; margin-bottom: 10px; margin-top: 20px;" >
+          Similar to the simulation experiments, we conducted real-world experiments for both single-task and language-conditioned multi-task settings.
+        </div>
+        
         <div style="text-align: center;">
           <img src="static/images/real-world.png" alt="Description of the image" style="width: 90%; height: auto;">
           <figcaption>Real-world robot experiments.</figcaption>
         </div>
 
-      <div id="video-container"></div> <!-- 这里动态插入所有视频 -->
+        
+        <div style="text-align: left; margin-bottom: 10px; margin-top: 20px; font-weight: bold; font-size: 20px;">
+          1. Single-task Setting
+        </div>
 
-      <script>
-      document.addEventListener("DOMContentLoaded", function () {
-          const tasks = [
-              {
-                  title: "Task 1: Pick the pink cup. We train the policy with 25 demos and output poses.",
-                  videos: [
-                      { src: "static/videos/real-world/task1/Task1_BC_Sub_01.mp4", label: "BC case 1 ✅" },
-                      { src: "static/videos/real-world/task1/Task1_BC_Sub_02.mp4", label: "BC case 2 ❌" },
-                      { src: "static/videos/real-world/task1/Task1_BC+IB_Sub_01.mp4", label: "BC+IB case 1 ✅" },
-                      { src: "static/videos/real-world/task1/Task1_BC+IB_Sub_02.mp4", label: "BC+IB case 2 ✅" },
-                  ],
-              },
-              {
-                  title: "Task 2: Place the pink cup into a bowl. We train the policy with 50 demos and output actions.",
-                  videos: [
-                      { src: "static/videos/real-world/task2/Task2_BC_Sub_01.mp4", label: "BC case 1 ✅" },
-                      { src: "static/videos/real-world/task2/Task2_BC_Sub_02.mp4", label: "BC case 2 ❌" },
-                      { src: "static/videos/real-world/task2/Task2_BC+IB_Sub_01.mp4", label: "BC+IB case 1 ✅" },
-                      { src: "static/videos/real-world/task2/Task2_BC+IB_Sub_02.mp4", label: "BC+IB case 2 ✅" },
-                  ],
-              },
-          ];
+        <div class="task">
+          <div class="task-title">Pick the red cup</div>
+          <div class="video-row">
+            <div class="video-block">
+              <video width="360" controls muted>
+                <source src="static/videos/real-world/single-task/task1/Task1_BC_Sub_01.mp4" type="video/mp4">
+              </video>
+              <div class="video-label">✅ VC1 case 1</div>
+            </div>
+            <div class="video-block">
+              <video width="360" controls muted>
+                <source src="static/videos/real-world/single-task/task1/Task1_BC_Sub_02.mp4" type="video/mp4">
+              </video>
+              <div class="video-label">❌ VC1 case 2</div>
+            </div>
+            <div class="video-block">
+              <video width="360" controls muted>
+                <source src="static/videos/real-world/single-task/task1/Task1_BC+IB_Sub_01.mp4" type="video/mp4">
+              </video>
+              <div class="video-label">✅ VC1+IB case 1</div>
+            </div>
+            <div class="video-block">
+              <video width="360" controls muted>
+                <source src="static/videos/real-world/single-task/task1/Task1_BC+IB_Sub_02.mp4" type="video/mp4">
+              </video>
+              <div class="video-label">✅ VC1+IB case 2</div>
+            </div>
+          </div>
+        </div>
 
-          const container = document.getElementById("video-container");
+        <div class="task">
+          <div class="task-title">Put the red cup into a bowl</div>
+          <div class="video-row">
+            <div class="video-block">
+              <video width="360" controls>
+                <source src="static/videos/real-world/single-task/task2/Task2_BC_Sub_01.mp4" type="video/mp4">
+              </video>
+              <div class="video-label">✅ VC1 case 1</div>
+            </div>
+            <div class="video-block">
+              <video width="360" controls muted>
+                <source src="static/videos/real-world/single-task/task2/Task2_BC_Sub_02.mp4" type="video/mp4">
+              </video>
+              <div class="video-label">❌ VC1 case 2</div>
+            </div>
+            <div class="video-block">
+              <video width="360" controls muted>
+                <source src="static/videos/real-world/single-task/task2/Task2_BC+IB_Sub_01.mp4" type="video/mp4">
+              </video>
+              <div class="video-label">✅ VC1+IB case 1</div>
+            </div>
+            <div class="video-block">
+              <video width="360" controls muted>
+                <source src="static/videos/real-world/single-task/task2/Task2_BC+IB_Sub_02.mp4" type="video/mp4">
+              </video>
+              <div class="video-label">✅ VC1+IB case 2</div>
+            </div>
+          </div>
+        </div>
 
-          tasks.forEach(task => {
-              const section = document.createElement("div");
-              section.innerHTML = `
-                  <div class="content has-text-justified" style="text-align: center; margin-top: 30px;">
-                      ${task.title}
-                  </div>
-                  <div class="video-row">
-                      ${task.videos.map(video => `
-                          <div class="video-container">
-                              <video class="video-player" autoplay loop muted>
-                                  <source src="${video.src}" type="video/mp4">
-                              </video>
-                              <input type="range" class="progress-bar" value="0" step="0.1">
-                              <div class="video-title">${video.label}</div>
-                          </div>
-                      `).join('')}
-                  </div>
-              `;
-              container.appendChild(section);
-          });
+        
+        <div style="text-align: left; margin-bottom: 10px; margin-top: 20px; font-weight: bold; font-size: 20px;">
+          2. Language-conditioned Multi-task Setting
+        </div>
 
-          // 绑定进度条逻辑
-          document.querySelectorAll(".video-container").forEach(container => {
-              const video = container.querySelector(".video-player");
-              const progressBar = container.querySelector(".progress-bar");
+        <div class="task">
+          <div class="task-title">Put wood block into red bowl</div>
+          <div class="video-row">
+            <div class="video-block">
+              <video width="360" controls muted>
+                <source src="static/videos/real-world/multi-task/Put_wood_block_into_red_bowl_CogAct.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <div class="video-label">✅ CogAct</div>
+            </div>
+            <div class="video-block">
+              <video width="360" controls muted>
+                <source src="static/videos/real-world/multi-task/Put_wood_block_into_red_bowl.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <div class="video-label">✅ CogAct+IB</div>
+            </div>
+          </div>
+        </div>
 
-              video.addEventListener("timeupdate", () => {
-                  if (!isNaN(video.duration)) {
-                      progressBar.value = (video.currentTime / video.duration) * 100;
-                  }
-              });
+        <div class="task">
+          <div class="task-title">Put corn into red bowl</div>
+          <div class="video-row">
+            <div class="video-block">
+              <video width="360" controls muted>
+                <source src="static/videos/real-world/multi-task/Put_corn_into_red_bowl_CogAct.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <div class="video-label">❌ CogAct</div>
+            </div>
+            <div class="video-block">
+              <video width="360" controls muted>
+                <source src="static/videos/real-world/multi-task/Put_corn_into_red_bowl.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <div class="video-label">✅ CogAct+IB</div>
+            </div>
+          </div>
+        </div>
 
-              progressBar.addEventListener("input", () => {
-                  video.currentTime = (progressBar.value / 100) * video.duration;
-              });
+        <div class="task">
+          <div class="task-title">Other cases of our CogAct+IB</div>
+          <div class="video-row">
+            <div class="video-block">
+              <div class="video-label">Put wood block into blue bowl</div>
+              <video width="360" controls muted>
+                <source src="static/videos/real-world/multi-task/Put_wood_block_into_blue_bowl.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <div class="video-label">✅ CogAct+IB</div>
+            </div>
+            <div class="video-block">
+              <div class="video-label">Put corn into blue bowl</div>
+              <video width="360" controls muted>
+                <source src="static/videos/real-world/multi-task/Put_corn_into_blue_bowl.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <div class="video-label">✅ CogAct+IB</div>
+            </div>
+          </div>
+        </div>
 
-              // 处理 autoplay 被阻止的情况
-              video.play().catch(error => console.log("Autoplay blocked:", error));
-          });
-      });
-      </script>
+        <div class="task">
+          <div class="video-row">
+            <div class="video-block">
+              <div class="video-label">Put wood block into green bowl (unseen)</div>
+              <video width="360" controls muted>
+                <source src="static/videos/real-world/multi-task/Put_wood_block_into_green_bowl.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <div class="video-label">✅ CogAct+IB</div>
+            </div>
+            <div class="video-block">
+              <div class="video-label">Put corn into green bowl (unseen)</div>
+              <video width="360" controls muted>
+                <source src="static/videos/real-world/multi-task/Put_corn_into_green_bowl.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <div class="video-label">✅ CogAct+IB</div>
+            </div>
+          </div>
+        </div>
+
 
       </div>
     </div>
